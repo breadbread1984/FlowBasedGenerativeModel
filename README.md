@@ -11,3 +11,11 @@ start the training with the following command
 python3 train_model.py
 ``` 
 
+## Test the model
+sample from the model with the following command
+
+```bash
+python3 test_model.py
+```
+
+the script with draw 200 samples from the generative model and print them on the console.
