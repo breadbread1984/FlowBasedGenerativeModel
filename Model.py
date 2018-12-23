@@ -12,9 +12,9 @@ class Model(tfp.bijectors.Bijector):
         layers = [];
         for i in range(num_layers):
             #affine(linear transform)
-            L = tf.Variable(np.tril(np.random.randn(2,2)), dtype = tf.float32);
-            V = tf.Variable(np.random.randn(2,2), dtype = tf.float32);
-            shift = tf.Variable(np.random.randn(2), dtype = tf.float32);
+            L = tf.Variable(np.tril(np.random.normal(size = (2,2))), dtype = tf.float32);
+            V = tf.Variable(np.random.normal(size = (2,2)), dtype = tf.float32);
+            shift = tf.Variable(np.random.normal(size = (2)), dtype = tf.float32);
             layers.append(tfp.bijectors.Affine(scale_tril = L, scale_perturb_factor = V, shift = shift));
             #leakyrelu(non-linear transform)
             alpha = tf.Variable(0.1,dtype = tf.float32);
